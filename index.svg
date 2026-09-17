@@ -2,20 +2,28 @@
     <foreignObject width="100%" height="100%">
         <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
             <head>
+                <script>(function(){const XHTML_NS="http://www.w3.org/1999/xhtml";const root=document.querySelector("foreignObject").firstElementChild;const originalCreateElement=document.createElement.bind(document);const originalCreateElementNS=document.createElementNS.bind(document);Object.defineProperty(document,"head",{get(){return root.querySelector("head")},configurable:true});Object.defineProperty(document,"body",{get(){return root.querySelector("body")},configurable:true});Object.defineProperty(document,"documentElement",{get(){return root},configurable:true});document.createElement=function(tagName,options){if(typeof tagName==="string"){return originalCreateElementNS(XHTML_NS,tagName,options)}return originalCreateElement(tagName,options)};document.createElementNS=function(namespaceURI,qualifiedName,options){if(namespaceURI==null||namespaceURI===XHTML_NS){return originalCreateElementNS(XHTML_NS,qualifiedName,options)}return originalCreateElementNS(namespaceURI,qualifiedName,options)};})();</script>
+                <style><![CDATA[html,body{margin:0;width:100%;height:100%;overflow:hidden}foreignObject{overflow:visible}]]></style>
+
                 <meta charset="UTF-8" />
-                <title>HTML Loader</title>
-                <style>
-                    html, body, iframe {
-                        margin: 0;
-                        width: 100%;
-                        height: 100%;
-                        border: 0;
-                        overflow: hidden;
-                    }
-                </style>
+                <title>APStudy | Math and Language Arts Tutoring</title>
             </head>
-            <body>
-                <iframe src="./index.html"></iframe>
+            <body style="background:#000">
+                <div>
+                    <p>APStudy helps students master algebra, calculus, geometry, and trigonometry alongside essay writing, grammar, and literary analysis for AP exams.</p>
+                    <section>
+                        <h2>Mathematics</h2>
+                        <p>We cover algebra, calculus, derivatives, integrals, quadratic equations, probability, and statistics including the Pythagorean theorem and trigonometry.</p>
+                    </section>
+                    <section>
+                        <h2>Science</h2>
+                        <p>Sessions cover biology, chemistry, and physics through hypothesis, experiment, photosynthesis, and thermodynamics.</p>
+                    </section>
+                    <section>
+                        <h2>English and Writing</h2>
+                        <p>Tutors help with essay, thesis, grammar, syntax, rhetoric, symbolism, and irony across persuasive and narrative writing.</p>
+                    </section>
+                </div>
             </body>
         </html>
     </foreignObject>
