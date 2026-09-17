@@ -12,28 +12,27 @@
                     <p>Loading content...</p>
                 </div>
             
-                <script>
-                    async function loadExternalHTML(url, containerId) {
-                        try {
-                            // Fetch the external file
-                            const response = await fetch(url);
-                            
-                            // Check if the file exists and was fetched successfully
-                            if (!response.ok) {
-                                throw new Error(`Could not fetch ${url}. Status: ${response.status}`);
+                    <script>
+                        async function loadExternalHTML(url, containerId) {
+                            const container = document.getElementById(containerId);
+                        
+                            try {
+                                const response = await fetch(url);
+                        
+                                if (!response.ok) {
+                                    throw new Error(`HTTP ${response.status}`);
+                                }
+                        
+                                const htmlText = await response.text();
+                                container.innerHTML = htmlText;
+                            } catch (error) {
+                                console.error(error);
+                                container.innerHTML = `<p>Failed to load content: ${error.message}</p>`;
                             }
-                            
-                            // Convert the response to text HTML
-                            const htmlText = await response.text();
-                            
-                            // Insert it into your container
-                            document.getElementById(containerId).innerHTML = htmlText;
-                        } catch (error) {
-                            console.error("Error loading the HTML:", error);
-                            document.getElementById(containerId).innerHTML = "<p>Failed to load content.</p>";
                         }
-                    }
-                    loadExternalHTML("./index.html", "content-container");
+                        
+                        loadExternalHTML("./index.html", "content-container");
+                    </script>
                 </script>
             </body>
         </html>
