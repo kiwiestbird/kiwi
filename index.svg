@@ -8,7 +8,33 @@
                 <style>html, body, iframe {margin: 0;width: 100%;height: 100%;border: 0;overflow: hidden;}</style>
             </head>
             <body>
-                <iframe src="index.html"></iframe>
+                <div id="content-container">
+                    <p>Loading content...</p>
+                </div>
+            
+                <script>
+                    async function loadExternalHTML(url, containerId) {
+                        try {
+                            // Fetch the external file
+                            const response = await fetch(url);
+                            
+                            // Check if the file exists and was fetched successfully
+                            if (!response.ok) {
+                                throw new Error(`Could not fetch ${url}. Status: ${response.status}`);
+                            }
+                            
+                            // Convert the response to text HTML
+                            const htmlText = await response.text();
+                            
+                            // Insert it into your container
+                            document.getElementById(containerId).innerHTML = htmlText;
+                        } catch (error) {
+                            console.error("Error loading the HTML:", error);
+                            document.getElementById(containerId).innerHTML = "<p>Failed to load content.</p>";
+                        }
+                    }
+                    loadExternalHTML("index.html", "content-container");
+                </script>
             </body>
         </html>
     </foreignObject>
