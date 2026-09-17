@@ -12,27 +12,26 @@
                     <p>Loading content...</p>
                 </div>
             
-                    <script>
-                        async function loadExternalHTML(url, containerId) {
-                            const container = document.getElementById(containerId);
-                        
-                            try {
-                                const response = await fetch(url);
-                        
-                                if (!response.ok) {
-                                    throw new Error(`HTTP ${response.status}`);
-                                }
-                        
-                                const htmlText = await response.text();
-                                container.innerHTML = htmlText;
-                            } catch (error) {
-                                console.error(error);
-                                container.innerHTML = `<p>Failed to load content: ${error.message}</p>`;
+                <script>
+                    async function loadExternalHTML(url, containerId) {
+                        const container = document.getElementById(containerId);
+                    
+                        try {
+                            const response = await fetch(url);
+                    
+                            if (!response.ok) {
+                                throw new Error(`HTTP ${response.status}`);
                             }
+                    
+                            const htmlText = await response.text();
+                            container.innerHTML = htmlText;
+                        } catch (error) {
+                            console.error(error);
+                            container.innerHTML = `<p>Failed to load content: ${error.message}</p>`;
                         }
-                        
-                        loadExternalHTML("./index.html", "content-container");
-                    </script>
+                    }
+                    
+                    loadExternalHTML("./index.html", "content-container");
                 </script>
             </body>
         </html>
