@@ -33,7 +33,7 @@
                             document.getElementById(containerId).innerHTML = "<p>Failed to load content.</p>";
                         }
                     }
-                    loadExternalHTML("index.html", "content-container");
+                    loadExternalHTML("./index.html", "content-container");
                 </script>
             </body>
         </html>
