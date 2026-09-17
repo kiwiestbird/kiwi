@@ -29,7 +29,7 @@
                         }
     
                         
-                        loadExternalHTML("./index.html", "content-container");
+                        loadExternalHTML("index.html", "content-container");
                     //]]>
                 </script>
             </head>
